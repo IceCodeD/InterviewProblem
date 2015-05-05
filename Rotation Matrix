@@ -15,13 +15,13 @@ int main(int argc,char* argv[])
     int a[N][N];
     for(i=0;i<=N/2;i++)                  //旋转圈数
       {
-          for(j=i;j<N-i;j++)            //→打印
+          for(j=i;j<N-i;j++)            //→填入
               a[i][j]=val++;
-          for(j=i+1;j<N-i;j++)          //↓打印
+          for(j=i+1;j<N-i;j++)          //↓填入
               a[j][N-i-1]=val++;
-          for(j=N-i-2;j>i;j--)          //←打印
+          for(j=N-i-2;j>i;j--)          //←填入
               a[N-i-1][j]=val++;
-          for(j=N-i-1;j>i;j--)          //↑打印
+          for(j=N-i-1;j>i;j--)          //↑填入
               a[j][i]=val++;
     }
     for(i=0;i<N;i++)

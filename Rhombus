@@ -1,0 +1,78 @@
+//use * to print rhombus
+//exs
+//       *                          *
+//      * *                        * *
+//     * * *                      *   *
+//    * * * *                    *     *
+//   * * * * *                  *       *
+//    * * * *                    *     *  
+//     * * *                      *   *         
+//      * *                        * *    
+//       *                          *    
+#include <stdio.h>
+#include <conio.h>
+#include <math.h>
+void rhombus_1()                      //第一个夹着空格的菱形
+{
+	
+	//void rhombus_1();
+	int line,row,sp;
+	for(line=-4;line<=4;line++)             //控制换行
+	{
+
+		for(row=-4;row<=4;row++)              //控制空格
+		{
+			if ((abs(row)+abs(line))<=4)               //划定菱形范围
+			{ 
+				if ((abs(line)%2!=0&&abs(row)%2!=0)||(abs(line)%2==0&&abs(row)%2==0))     //判断打印条件若行列都为奇数或者偶数则打印*
+				{
+					printf("*");
+				}
+				else
+				{
+					printf(" ");
+				}
+			}
+			else
+				printf(" ");
+			
+			
+		}
+
+		printf("\n");
+		
+	}
+
+		
+}
+void rhombus_2()
+{
+	
+	int line,row,sp;
+	for(line=-4;line<=4;line++)
+	{
+
+		for(row=-4;row<=4;row++)
+		{
+			if ((abs(row)+abs(line))==4)              //只需要在边界上打印*即可
+			{
+				printf("*");
+			}
+			else
+				printf(" ");
+		}
+
+		printf("\n");
+	}
+	
+}
+int main(int argc,char* argv[])
+{
+	
+
+	rhombus_1();
+	printf("\n");
+	rhombus_2();
+	getch();
+	return 0;
+}

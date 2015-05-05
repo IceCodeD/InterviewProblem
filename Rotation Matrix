@@ -1,0 +1,36 @@
+//problem describe:output a rotation matrix
+//ex
+//output: 1  2  3  4 5
+//       16 17 18 19 6
+//       15 24 25 20 7
+//       14 23 22 21 8
+//       13 12 11 10 9
+
+#include <stdio.h>
+#include <conio.h>
+#define N 5
+int main(int argc,char* argv[])
+{
+    int i,j,val=1;
+    int a[N][N];
+    for(i=0;i<=N/2;i++)                  //旋转圈数
+      {
+          for(j=i;j<N-i;j++)            //→打印
+              a[i][j]=val++;
+          for(j=i+1;j<N-i;j++)          //↓打印
+              a[j][N-i-1]=val++;
+          for(j=N-i-2;j>i;j--)          //←打印
+              a[N-i-1][j]=val++;
+          for(j=N-i-1;j>i;j--)          //↑打印
+              a[j][i]=val++;
+    }
+    for(i=0;i<N;i++)
+    {
+      for(j=0;j<N;j++)
+        printf("%3d",a[i][j]);
+    printf("\n");
+    }
+
+  getch();
+  return 0;
+}
